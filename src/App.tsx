@@ -38,7 +38,7 @@ export default function App() {
       <section id="part-01">
         <div className="title">
           <div className="logo">
-            <img src="./givingStreet.png" alt="Logo" />
+            <img src="images/givingStreet.png" alt="Logo" />
           </div>
           <div className="content">
             <span>
