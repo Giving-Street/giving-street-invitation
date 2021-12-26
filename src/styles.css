@@ -1,0 +1,82 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+* {
+  font-family: "Spoqa Han Sans Neo", "sans-serif";
+  color: #212729;
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: whitesmoke;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  width: 75%;
+  background-color: white;
+}
+
+@media (max-width: 480px) {
+  .App {
+    width: 100%;
+  }
+}
+
+section {
+  margin: 16px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section .title {
+  font-weight: bolder;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 8px 0;
+}
+
+section .content {
+  margin: 4px 0;
+  font-weight: 300;
+}
+
+.rules {
+  font-size: 0.9rem;
+  text-align: left;
+  margin: 64px 0;
+}
+
+.rules li {
+  display: block;
+}
+
+.logo {
+  max-width: 320px;
+}
+
+.copiable-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 16px 0;
+}
+
+.copy-button {
+  width: 15px;
+  max-width: 15px;
+  cursor: pointer;
+}
+
+.copy-button:hover path {
+  fill: blueviolet;
+}
+
+.info {
+  justify-content: flex-start;
+}
