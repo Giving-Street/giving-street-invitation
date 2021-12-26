@@ -1,4 +1,4 @@
-import { ReactHTML, useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import "./styles.css";
 import { ReactComponent as CopySvg } from "./copy.svg";
 
@@ -13,12 +13,15 @@ export default function App() {
       }
     }, [copySuccess]);
 
-    const handleClick = (e: { target: { focus: () => void } }) => {
-      e.target.focus();
-      document.execCommand("copy");
-      navigator.clipboard.writeText(copiableDiv?.current?.innerHTML ?? "");
-      setCopySuccess("클립보드에 저장했습니다.");
-    };
+    const handleClick = useCallback(() => {
+      if (copiableDiv.current) {
+        const currentDiv: HTMLDivElement = copiableDiv.current;
+        currentDiv.focus();
+        navigator.clipboard.writeText(currentDiv.innerHTML ?? "");
+        setCopySuccess("클립보드에 저장했습니다.");
+      }
+    }, []);
+
     return (
       <div className="copiable-link">
         <div className="direction-copiable-address" ref={copiableDiv}>
