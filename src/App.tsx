@@ -1,6 +1,18 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import "./styles.css";
 import { ReactComponent as CopySvg } from "./copy.svg";
+import "swiper/css";
+import "swiper/css/effect-cards";
+import { Swiper, SwiperSlide } from "swiper/react";
+import fs from "fs";
+
+import "./styles.css";
+
+// import Swiper core and required modules
+import SwiperCore, { EffectCards } from "swiper";
+
+// install Swiper modules
+SwiperCore.use([EffectCards]);
 
 export default function App() {
   const CopiableLink = () => {
@@ -33,6 +45,25 @@ export default function App() {
       </div>
     );
   };
+
+  const Slides = () => {
+    const galleryDirectory = fs.readdirSync("public/images/gallery");
+
+    return (
+      <Swiper effect={"cards"} grabCursor={true} className="mySwiper">
+        {galleryDirectory.map((file: any, index: number) => (
+          <SwiperSlide key={index}>
+            <img
+              className="swiper-image"
+              src={`images/gallery/${file}`}
+              alt={`slide-${index + 1}`}
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    );
+  };
+
   return (
     <div className="App">
       <section id="part-01">
@@ -40,43 +71,48 @@ export default function App() {
           <div className="logo">
             <img src="images/givingStreet.png" alt="Logo" />
           </div>
-          <div className="content">
-            <span>
-              <span className="highlight main">Giving Street | 줄거리</span>
-            </span>
-            <div className="rules">
-              <h3>줄거리 이용 규칙</h3>
-              <li>
-                윤리를 지키자.{" "}
-                <span className="highlight">떳떳하지 않은 일은 하지 말자</span>
-              </li>
-              <li>
-                주방 사용하면,{" "}
-                <span className="highlight">
-                  공간을 떠나기 전 원상 복구 하고 가기
-                </span>
-              </li>
-              <li>
-                <span className="highlight">청소는 나올 때 보다 더 깨끗이</span>
-              </li>
-              <li>
-                지인 초대는 <span className="highlight">미리 이야기하기</span>
-              </li>
-              <li>
-                성선설에 기반해서{" "}
-                <span className="highlight">서로 믿고 존중하기</span>
-              </li>
-              <li>
-                <span className="highlight">
-                  서로 좋은 영향 주고, 함께 성장하기
-                </span>
-              </li>
-            </div>
+        </div>
+        <div className="content">
+          <span>
+            <span className="highlight main">Giving Street | 줄거리</span>
+          </span>
+          <div className="rules">
+            <h3>줄거리 이용 규칙</h3>
+            <li>
+              윤리를 지키자.{" "}
+              <span className="highlight">떳떳하지 않은 일은 하지 말자</span>
+            </li>
+            <li>
+              주방 사용하면,{" "}
+              <span className="highlight">
+                공간을 떠나기 전 원상 복구 하고 가기
+              </span>
+            </li>
+            <li>
+              <span className="highlight">청소는 나올 때 보다 더 깨끗이</span>
+            </li>
+            <li>
+              지인 초대는 <span className="highlight">미리 이야기하기</span>
+            </li>
+            <li>
+              성선설에 기반해서{" "}
+              <span className="highlight">서로 믿고 존중하기</span>
+            </li>
+            <li>
+              <span className="highlight">
+                서로 좋은 영향 주고, 함께 성장하기
+              </span>
+            </li>
           </div>
         </div>
-        <div className="content"></div>
       </section>
       <section id="part-02">
+        <div className="title">줄거리 갤러리</div>
+        <div className="content">
+          <Slides />
+        </div>
+      </section>
+      <section id="part-03">
         <div className="title">오시는 길</div>
         <div className="content">
           <div className="direction-map">

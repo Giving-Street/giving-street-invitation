@@ -109,6 +109,30 @@ section .content {
   justify-content: flex-start;
 }
 
+section#part-02 .content > * {
+  max-width: 100%;
+}
+
+.swiper {
+  width: 240px;
+  height: 320px;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.swiper-image {
+  width: 100%;
+  height: auto;
+}
+
 footer {
   font-weight: 100;
   font-size: 0.8rem;
