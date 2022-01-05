@@ -44,34 +44,6 @@ export default function App() {
             <span>
               <span className="highlight main">Giving Street | 줄거리</span>
             </span>
-            <div className="rules">
-              <h3>줄거리 이용 규칙</h3>
-              <li>
-                윤리를 지키자.{" "}
-                <span className="highlight">떳떳하지 않은 일은 하지 말자</span>
-              </li>
-              <li>
-                주방 사용하면,{" "}
-                <span className="highlight">
-                  공간을 떠나기 전 원상 복구 하고 가기
-                </span>
-              </li>
-              <li>
-                <span className="highlight">청소는 나올 때 보다 더 깨끗이</span>
-              </li>
-              <li>
-                지인 초대는 <span className="highlight">미리 이야기하기</span>
-              </li>
-              <li>
-                성선설에 기반해서{" "}
-                <span className="highlight">서로 믿고 존중하기</span>
-              </li>
-              <li>
-                <span className="highlight">
-                  서로 좋은 영향 주고, 함께 성장하기
-                </span>
-              </li>
-            </div>
           </div>
         </div>
         <div className="content"></div>
@@ -88,6 +60,38 @@ export default function App() {
           <CopiableLink />
           <div className="info">
             <div>구의역 도보 5분 거리</div>
+          </div>
+        </div>
+      </section>
+      <section id="part-03">
+        <div className="title">줄거리 이용 규칙</div>
+        <div className="content">
+          <div className="rules">
+            <li>
+              윤리를 지키자.{" "}
+              <span className="highlight">떳떳하지 않은 일은 하지 말자</span>
+            </li>
+            <li>
+              주방 사용하면,{" "}
+              <span className="highlight">
+                공간을 떠나기 전 원상 복구 하고 가기
+              </span>
+            </li>
+            <li>
+              <span className="highlight">청소는 나올 때 보다 더 깨끗이</span>
+            </li>
+            <li>
+              지인 초대는 <span className="highlight">미리 이야기하기</span>
+            </li>
+            <li>
+              성선설에 기반해서{" "}
+              <span className="highlight">서로 믿고 존중하기</span>
+            </li>
+            <li>
+              <span className="highlight">
+                서로 좋은 영향 주고, 함께 성장하기
+              </span>
+            </li>
           </div>
         </div>
       </section>

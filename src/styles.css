@@ -77,7 +77,7 @@ section .content {
 .rules {
   font-size: 0.9rem;
   text-align: left;
-  margin: 64px 0;
+  margin: 16px 0;
 }
 
 .rules li {
